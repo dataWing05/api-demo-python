@@ -8,7 +8,8 @@ from sm2_utils import encrypt_sm2
 
 url = "http://127.0.0.1:8081/api/data/load"
 
-client_id = "your_client_id"
+client_id = "12805626"
+business_id = "253869086781"
 timestamp = str(int(time.time()) * 1000)
 nonce = str(random.randint(10000000, 99999999))
 
@@ -18,6 +19,7 @@ def test_get():
     signature = hashlib.sha256(sign_str.encode('utf-8')).hexdigest()[:32]
     headers = {
         "X-Client-Id": client_id,
+        "X-Business-Id": business_id,
         "X-Timestamp": timestamp,
         "X-Nonce": nonce,
         "X-Signature": signature,
@@ -32,7 +34,12 @@ def test_get():
 
 def test_post():
     data = {
-        "key": "value"
+        "upsert": [
+            {"id": 1, "name": "test", "score": 11}
+        ],
+        "delete": [
+            {"id": 100, "score": 9}
+        ]
     }
     encrypted_data = encrypt_sm2(json.dumps(data))
     print("base64 decoded encrypted data:", base64.b64decode(encrypted_data))
@@ -41,6 +48,7 @@ def test_post():
     signature = hashlib.sha256(sign_str.encode('utf-8')).hexdigest()[:32]
     headers = {
         "X-Client-Id": client_id,
+        "X-Business-Id": business_id,
         "X-Timestamp": timestamp,
         "X-Nonce": nonce,
         "X-Signature": signature,
@@ -55,5 +63,5 @@ def test_post():
 
 
 if __name__ == '__main__':
-    test_get()
+    # test_get()
     test_post()
