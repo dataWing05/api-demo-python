@@ -1,0 +1,101 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Unit test / coverage
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.cache/
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Type check / lint
+.mypy_cache/
+.pyre/
+.pytype/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Logs / debug
+*.log
+
+# IDE / Editor
+.idea/
+.vscode/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Environment variables files
+.env
+.env.*
+*.env
+
+# Local certificates / keys (avoid committing private keys)
+keys/*private*.pem
+*.key
+*.pfx
+*.p12
+
+# Ignore everything in keys except explicit public files (uncomment if needed)
+# keys/*
+# !keys/public_key.pem
+
+# Generated data / temp
+tmp/
+temp/
+
+# SQLite / DB
+*.sqlite3
+*.db
+
+# Coverage tools
+.coverage.*
+hypothesis/
+
+# Packaging helpers
+pip-log.txt
+pip-delete-this-directory.txt
